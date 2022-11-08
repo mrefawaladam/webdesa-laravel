@@ -1,0 +1,14 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class AnggaranRealisasi extends Model
+{
+    protected $table = "anggaran_realisasi";
+    protected $fillable = ['tahun','detail_jenis_anggaran_id','nilai_realisasi','nilai_anggaran','keterangan_lainnya'];
+
+    use HasFactory;
+}
