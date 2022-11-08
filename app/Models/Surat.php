@@ -11,4 +11,14 @@ class Surat extends Model
     protected $guarded = [];
 
     use HasFactory;
+
+    public function isiSurat()
+    {
+        return $this->hasMany(IsiSurat::class, 'surat_id');
+    }
+
+    public function cetakSurat()
+    {
+        return $this->hasMany(CetakSurat::class, 'surat_id');
+    }
 }

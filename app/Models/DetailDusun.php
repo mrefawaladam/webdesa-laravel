@@ -11,4 +11,14 @@ class DetailDusun extends Model
     protected $guarded = [];
 
     use HasFactory;
+
+    public function penduduk()
+    {
+        return $this->hasMany(Penduduk::class);
+    }
+
+    public function dusun()
+    {
+        return $this->belongsTo(Dusun::class);
+    }
 }

@@ -11,4 +11,9 @@ class DetailCetak extends Model
     protected $guarded = [];
 
     use HasFactory;
+
+    public function detailCetak()
+    {
+        return $this->belongsTo(CetakSurat::class);
+    }
 }

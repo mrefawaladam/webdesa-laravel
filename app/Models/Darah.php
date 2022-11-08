@@ -12,4 +12,9 @@ class Darah extends Model
     protected $guarded = [];
 
     use HasFactory;
+
+    public function penduduk()
+    {
+        return $this->hasMany(Penduduk::class);
+    }
 }

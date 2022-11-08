@@ -11,4 +11,14 @@ class KelompokJenisAnggaran extends Model
     protected $guarded = [];
 
     use HasFactory;
+
+    public function jenis_anggaran()
+    {
+        return $this->belongsTo(JenisAnggaran::class);
+    }
+
+    public function detail_kelompok_jenis_anggaran()
+    {
+        return $this->hasMany(DetailJenisAnggaran::class);
+    }
 }

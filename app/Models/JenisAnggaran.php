@@ -11,4 +11,9 @@ class JenisAnggaran extends Model
     protected $guarded = [];
 
     use HasFactory;
+
+    public function kelompok_jenis_anggaran()
+    {
+        return $this->hasMany(KelompokJenisAnggaran::class);
+    }
 }

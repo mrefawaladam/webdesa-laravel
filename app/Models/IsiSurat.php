@@ -11,4 +11,9 @@ class IsiSurat extends Model
     protected $guarded = [];
 
     use HasFactory;
+
+    public function surat()
+    {
+        return $this->belongsTo(Surat::class, 'surat_id');
+    }
 }

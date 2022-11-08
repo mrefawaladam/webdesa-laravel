@@ -11,5 +11,15 @@ class CetakSurat extends Model
     protected $table = 'cetak_surat';
     protected $guarded = [];
 
+    public function surat()
+    {
+        return $this->belongsTo(Surat::class);
+    }
+
+    public function detailCetak()
+    {
+        return $this->hasMany(DetailCetak::class);
+    }
+
     use HasFactory;
 }

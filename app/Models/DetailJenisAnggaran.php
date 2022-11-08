@@ -11,4 +11,19 @@ class DetailJenisAnggaran extends Model
     protected $guarded = [];
 
     use HasFactory;
+
+    public function kelompok_jenis_anggaran()
+    {
+        return $this->belongsTo(KelompokJenisAnggaran::class);
+    }
+
+    public function jenis_anggaran()
+    {
+        return $this->belongsTo(JenisAnggaran::class);
+    }
+
+    public function anggaran_realisasi()
+    {
+        return $this->hasMany(AnggaranRealisasi::class);
+    }
 }
