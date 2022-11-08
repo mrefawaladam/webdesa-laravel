@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class CetakSurat extends Model
 {
-
+    use HasFactory;
     protected $table = 'cetak_surat';
     protected $guarded = [];
 
@@ -21,5 +21,4 @@ class CetakSurat extends Model
         return $this->hasMany(DetailCetak::class);
     }
 
-    use HasFactory;
 }

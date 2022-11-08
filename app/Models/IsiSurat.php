@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class IsiSurat extends Model
 {
+    use HasFactory;
     protected $table = 'isi_surat';
     protected $guarded = [];
 
-    use HasFactory;
 
     public function surat()
     {

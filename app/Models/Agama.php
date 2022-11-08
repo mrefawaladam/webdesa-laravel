@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Agama extends Model
 {
+    use HasFactory;
     protected $table = "agama";
     protected $guarded = [];
 
@@ -15,5 +16,4 @@ class Agama extends Model
         return $this->hasMany(Penduduk::class);
     }
 
-    use HasFactory;
 }

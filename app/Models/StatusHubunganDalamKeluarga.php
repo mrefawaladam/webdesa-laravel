@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class StatusHubunganDalamKeluarga extends Model
 {
+    use HasFactory;
     protected $table = "status_hubungan_dalam_keluarga";
     protected $guarded = [];
 
-    use HasFactory;
 
     public function penduduk()
     {

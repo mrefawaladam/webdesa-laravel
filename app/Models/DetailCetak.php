@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class DetailCetak extends Model
 {
+    use HasFactory;
     protected $table = 'detail_cetak';
     protected $guarded = [];
 
-    use HasFactory;
 
     public function detailCetak()
     {

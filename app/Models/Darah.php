@@ -7,11 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Darah extends Model
 {
-
+    use HasFactory;
     protected $table = "darah";
     protected $guarded = [];
 
-    use HasFactory;
 
     public function penduduk()
     {

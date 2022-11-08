@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class KelompokJenisAnggaran extends Model
 {
+    use HasFactory;
     protected $table = "kelompok_jenis_anggaran";
     protected $guarded = [];
 
-    use HasFactory;
 
     public function jenis_anggaran()
     {

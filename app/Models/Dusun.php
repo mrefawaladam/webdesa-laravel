@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Dusun extends Model
 {
+    use HasFactory;
     protected $table = "dusun";
     protected $guarded = [];
 
-    use HasFactory;
 
     public function detailDusun()
     {
