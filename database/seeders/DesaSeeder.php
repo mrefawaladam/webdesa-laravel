@@ -1,6 +1,6 @@
 <?php
 
-use App\Desa;
+use App\Models\Desa;
 use Illuminate\Database\Seeder;
 
 class DesaSeeder extends Seeder
