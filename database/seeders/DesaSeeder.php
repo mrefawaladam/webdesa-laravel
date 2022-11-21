@@ -4,7 +4,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 use App\Desa;
- 
+
 class DesaSeeder extends Seeder
 {
     /**
@@ -15,12 +15,12 @@ class DesaSeeder extends Seeder
     public function run()
     {
         Desa::create([
-            'nama_desa'         => 'Arjasa',
-            'nama_kecamatan'    => 'Arjasa',
-            'nama_kabupaten'    => 'Jember',
-            'alamat'            => 'Jl. Rengganis Nomor 01 Arjasa 68191',
-            'nama_kepala_desa'  => "WASI'A",
-            'alamat_kepala_desa'=> "Dusun Gumitir Desa Arjasa  Kecamatan  Arjasa Kabupaten Jember",
+            'nama_desa'         => 'Gemantar',
+            'nama_kecamatan'    => 'Selogiri',
+            'nama_kabupaten'    => 'Wonogiri',
+            'alamat'            => 'Jl. Pandawa No.46 RT 01 RW 02',
+            'nama_kepala_desa'  => "Sunarno",
+            'alamat_kepala_desa'=> "Dusun Gemantar RT 02 RW 02 Gemantar",
             'logo'              => "logo.png",
         ]);
     }
