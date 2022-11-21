@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +15,7 @@ use App\Http\Controllers\UserController;
 */
 
 Route::group(['middleware' => ['web', 'guest']], function () {
-    Route::get('/masuk', [UserController::class, 'index'])->name('masuk');
-    Route::post('/masuk',[UserController::class, 'masuk']);
+    Route::get('/masuk', [AuthController::class, 'index'])->name('masuk');
+    Route::post('/masuk',[AuthController::class, 'masuk']);
 });
  

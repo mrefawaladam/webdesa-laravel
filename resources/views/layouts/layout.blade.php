@@ -83,7 +83,7 @@
                     <!-- Navbar items -->
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link nav-link-icon" href="{{ route('home.index') }}">
+                            <a class="nav-link nav-link-icon" href="{{ url('home.index') }}">
                                 <i class="fas fa-home"></i>
                                 <span class="nav-link-inner--text">Beranda</span>
                             </a>
@@ -93,27 +93,27 @@
                                 <i class="fas fa-bars"></i> <span class="nav-link-inner--text">Menu Utama</span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right py-0 overflow-hidden">
-                                <a class="dropdown-item @if (Request::segment(1) == 'layanan-surat') active @endif" href="{{ route('layanan-surat') }}">
+                                <a class="dropdown-item @if (Request::segment(1) == 'layanan-surat') active @endif" href="{{ url('layanan-surat') }}">
                                     <i class="fas fa-fw fa-file-alt text-yellow"></i>
                                     <span class="nav-link-inner--text">Layanan Surat</span>
                                 </a>
-                                <a class="dropdown-item @if (Request::segment(1) == 'pemerintahan-desa') active @endif" href="{{ route('pemerintahan-desa') }}">
+                                <a class="dropdown-item @if (Request::segment(1) == 'pemerintahan-desa') active @endif" href="{{ url('pemerintahan-desa') }}">
                                     <i class="fas fa-fw fa-atlas text-success"></i>
                                     <span class="nav-link-inner--text">Pemerintahan Desa</span>
                                 </a>
-                                <a class="dropdown-item @if (Request::segment(1) == 'berita') active @endif" href="{{ route('berita') }}">
+                                <a class="dropdown-item @if (Request::segment(1) == 'berita') active @endif" href="{{ url('berita') }}">
                                     <i class="fas fa-fw fa-newspaper text-cyan"></i>
                                     <span class="nav-link-inner--text">Berita</span>
                                 </a>
-                                <a class="dropdown-item @if (Request::segment(1) == 'gallery') active @endif" href="{{ route('gallery') }}">
+                                <a class="dropdown-item @if (Request::segment(1) == 'gallery') active @endif" href="{{ url('gallery') }}">
                                     <i class="fas fa-fw fa-images text-orange"></i>
                                     <span class="nav-link-inner--text">Gallery</span>
                                 </a>
-                                <a class="dropdown-item @if (Request::segment(1) == 'statistik-penduduk') active @endif" href="{{ route('statistik-penduduk') }}">
+                                <a class="dropdown-item @if (Request::segment(1) == 'statistik-penduduk') active @endif" href="{{ url('statistik-penduduk') }}">
                                     <i class="fas fa-fw fa-chart-pie text-info"></i>
                                     <span class="nav-link-inner--text">Statistik Penduduk</span>
                                 </a>
-                                <a class="dropdown-item @if (Request::segment(1) == 'laporan-apbdes') active @endif" href="{{ route('laporan-apbdes') }}">
+                                <a class="dropdown-item @if (Request::segment(1) == 'laporan-apbdes') active @endif" href="{{ url('laporan-apbdes') }}">
                                     <i class="fas fa-fw fa-money-check-alt text-success"></i>
                                     <span class="nav-link-inner--text">Laporan APBDes</span>
                                 </a>
@@ -125,44 +125,44 @@
                                     <i class="fas fa-bars"></i> <span class="nav-link-inner--text">Menu Admin</span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right py-0 overflow-hidden">
-                                    <a class="dropdown-item" href="{{ route('dashboard') }}">
+                                    <a class="dropdown-item" href="{{ url('dashboard') }}">
                                         <i class="fas fa-fw fa-tachometer-alt text-blue"></i> Dashboard
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('penduduk.index') }}">
+                                    <a class="dropdown-item" href="{{ url('penduduk.index') }}">
                                         <i class="fas fa-fw fa-users text-info"></i> Kelola Penduduk
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('dusun.index') }}">
+                                    <a class="dropdown-item" href="{{ url('dusun.index') }}">
                                         <i class="fas fa-fw fa-map-marker-alt text-yellow"></i> Kelola Dusun
                                     </a>
                                     <a class="dropdown-item" href="{{ url('anggaran-realisasi?jenis=pendapatan&tahun='.date('Y')) }}">
                                         <i class="fas fa-fw fa-coins text-success"></i> Kelola APBDes
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('surat.index') }}">
+                                    <a class="dropdown-item" href="{{ url('surat.index') }}">
                                         <i class="fas fa-fw fa-file-alt text-primary"></i> Kelola Surat
                                     </a>
-                                    <a href="{{ route('pemerintahan-desa.index') }}" class="dropdown-item">
+                                    <a href="{{ url('pemerintahan-desa.index') }}" class="dropdown-item">
                                         <i class="fas fa-fw fa-atlas text-success"></i> Kelola Informasi Pemerintahan Desa
                                     </a>
-                                    <a href="{{ route('berita.index') }}" class="dropdown-item">
+                                    <a href="{{ url('berita.index') }}" class="dropdown-item">
                                         <i class="fas fa-fw fa-newspaper text-cyan"></i> Kelola Berita
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('gallery.index') }}">
+                                    <a class="dropdown-item" href="{{ url('gallery.index') }}">
                                         <i class="fas fa-fw fa-images text-orange"></i> Kelola Gallery
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('slider.index') }}">
+                                    <a class="dropdown-item" href="{{ url('slider.index') }}">
                                         <i class="fas fa-fw fa-images text-purple"></i> Kelola Slider
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('profil-desa') }}">
+                                    <a class="dropdown-item" href="{{ url('profil-desa') }}">
                                         <i class="fas fa-fw fa-users text-info"></i> Profil Desa
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('profil') }}">
+                                    <a class="dropdown-item" href="{{ url('profil') }}">
                                         <i class="fas fa-fw fa-user text-yellow"></i> Profil Saya
                                     </a>
                                     <hr class="m-0">
-                                    <a class="dropdown-item" href="{{ route('keluar') }}" onclick="event.preventDefault(); document.getElementById('form-keluar').submit();">
+                                    <a class="dropdown-item" href="{{ url('keluar') }}" onclick="event.preventDefault(); document.getElementById('form-keluar').submit();">
                                         <i class="fas fa-fw fa-sign-out-alt"></i> Keluar
                                     </a>
-                                    <form id="form-keluar" action="{{ route('keluar') }}" method="POST" style="display: none;">
+                                    <form id="form-keluar" action="{{ url('keluar') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
                                 </div>
