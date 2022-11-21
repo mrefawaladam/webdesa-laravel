@@ -3713,7 +3713,7 @@ input[type="button"].btn-block {
 .dropdown-item:active {
   color: #fff;
   text-decoration: none;
-  background-color: #5e72e4;
+  background-color: #54ad48;;
 }
 
 .dropdown-item.disabled,
@@ -3990,7 +3990,7 @@ input[type="button"].btn-block {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #adb5bd;
+  color: #fff;
   text-align: center;
   white-space: nowrap;
   background-color: #fff;
@@ -4510,7 +4510,7 @@ input[type="button"].btn-block {
 .nav-pills .nav-link.active,
 .nav-pills .show>.nav-link {
   color: #fff;
-  background-color: #5e72e4;
+  background-color: #54ad48;;
 }
 
 .nav-fill .nav-item {
@@ -13469,7 +13469,7 @@ button.bg-lighter:focus {
 }
 
 .bg-gradient-primary {
-  background: linear-gradient(87deg, #5e72e4 0, #825ee4 100%) !important;
+    background: linear-gradient(87deg, #34b047 0, #afb93f 100%) !important;
 }
 
 .bg-gradient-secondary {
@@ -13764,7 +13764,7 @@ button.section-darker:focus {
 }
 
 .bg-gradient-primary {
-  background: linear-gradient(87deg, #5e72e4 0, #825ee4 100%) !important;
+    background: linear-gradient(87deg, #34b047 0, #afb93f 100%) !important;
 }
 
 .bg-gradient-secondary {
@@ -16686,7 +16686,7 @@ textarea[resize="horizontal"] {
 .nav-pills .nav-link.active,
 .nav-pills .show>.nav-link {
   color: #fff;
-  background-color: #5e72e4;
+  background-color: #54ad48;;
 }
 
 @media (max-width: 575.98px) {

@@ -17,6 +17,10 @@
     .animate-up:hover {
         top: -5px;
     }
+
+    #cari::placeholder {
+        color: white;
+    }
 </style>
 @endsection
 
