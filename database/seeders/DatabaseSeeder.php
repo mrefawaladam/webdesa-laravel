@@ -1,7 +1,6 @@
 <?php
-
-use App\Models\JenisAnggaran;
-use App\Models\StatusHubunganDalamKeluarga;
+namespace Database\Seeders;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -12,31 +11,18 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
-        $this->call([
-            AgamaSeeder::class,
-            AnggaranRealisasiSeeder::class,
-            BeritaSeeder::class,
-            CetakSuratSeeder::class,
-            DarahSeeder::class,
-            DesaSeeder::class,
-            DetailCetakSeeder::class,
-            DetailDusunSeeder::class,
-            DetailJenisAnggaranSeeder::class,
-            DusunSeeder::class,
-            GallerySeeder::class,
-            IsiSuratSeeder::class,
-            JenisAnggaranSeeder::class,
-            KelompokJenisAnggaranSeeder::class,
-            PekerjaanSeeder::class,
-            PemerintahanDesaSeeder::class,
-            PendidikanSeeder::class,
-            PendudukSeeder::class,
-            StatusHubunganDalamKeluargaSeeder::class,
-            StatusPerkawinanSeeder::class,
-            SuratSeeder::class,
-            UserSeeder::class,
-            VideoSeeder::class
-        ]);
+    { 
+            $this->call(UserSeeder::class);
+            $this->call(DesaSeeder::class);
+            $this->call(AgamaSeeder::class);
+            $this->call(DarahSeeder::class);
+            $this->call(PekerjaanSeeder::class);
+            $this->call(PendidikanSeeder::class);
+            $this->call(StatusHubunganDalamKeluargaSeeder::class);
+            $this->call(StatusPerkawinanSeeder::class);
+            $this->call(JenisAnggaranSeeder::class);
+            $this->call(KelompokJenisAnggaranSeeder::class);
+            $this->call(DetailJenisAnggaranSeeder::class);
+       
     }
 }

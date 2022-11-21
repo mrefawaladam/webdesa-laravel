@@ -1,8 +1,10 @@
 <?php
-
-use App\Models\Desa;
+namespace Database\Seeders;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+use App\Desa;
+ 
 class DesaSeeder extends Seeder
 {
     /**

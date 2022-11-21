@@ -1,8 +1,10 @@
 <?php
-
-use App\Models\JenisAnggaran;
+namespace Database\Seeders;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+use App\JenisAnggaran;
+ 
 class JenisAnggaranSeeder extends Seeder
 {
     /**

@@ -1,6 +1,8 @@
 <?php
 
-use App\Models\Agama;
+namespace Database\Seeders;
+use App\Agama;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class AgamaSeeder extends Seeder

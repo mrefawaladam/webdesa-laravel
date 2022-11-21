@@ -1,8 +1,10 @@
 <?php
-
-use App\Models\Pekerjaan;
+namespace Database\Seeders;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+use App\Pekerjaan;
+ 
 class PekerjaanSeeder extends Seeder
 {
     /**

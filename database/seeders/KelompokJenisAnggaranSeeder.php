@@ -1,8 +1,10 @@
 <?php
-
-use App\Models\KelompokJenisAnggaran;
+namespace Database\Seeders;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+use App\KelompokJenisAnggaran;
+ 
 class KelompokJenisAnggaranSeeder extends Seeder
 {
     /**
