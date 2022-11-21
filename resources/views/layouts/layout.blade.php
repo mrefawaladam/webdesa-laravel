@@ -83,7 +83,7 @@
                     <!-- Navbar items -->
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link nav-link-icon" href="{{ url('home.index') }}">
+                            <a class="nav-link nav-link-icon" href="{{ url('') }}">
                                 <i class="fas fa-home"></i>
                                 <span class="nav-link-inner--text">Beranda</span>
                             </a>
@@ -205,8 +205,8 @@
                     </div>
                     <div class="col-xl-6">
                         <div class="copyright text-center text-xl-right text-muted">
-                            Powered By <a href="https://github.com/maulanakevinp/simapeda/tree/1.2" class="font-weight-bold ml-1"
-                                target="_blank">SIMAPEDA</a>
+                            Powered By <a href="https://github.com/mrefawaladam/webdesa-laravel.git" class="font-weight-bold ml-1"
+                                target="_blank">Web Desa</a>
                         </div>
                     </div>
                 </div>
