@@ -74,6 +74,11 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     Route::get('/profil-desa', [DesaController::class, 'index'])->name('profil-desa');
     Route::patch('/update-desa/{desa}', [DesaController::class, 'update'])->name('update-desa');
 
+    Route::get('/kelola-pemerintahan-desa', [PemerintahanDesaController::class ,'index'])->name('pemerintahan-desa.index');
+    Route::get('/tambah-pemerintahan-desa', [PemerintahanDesaController::class, 'create'])->name('pemerintahan-desa.create');
+    Route::get('/edit-pemerintahan-desa/{pemerintahan_desa}', [PemerintahanDesaController::class, 'edit'])->name('pemerintahan-desa.edit');
+    Route::resource('/pemerintahan-desa', PemerintahanDesaController::class)->except('create','show','index','edit');
+
     Route::get('/kelompok-jenis-anggaran/{kelompokJenisAnggaran}', [AnggaranRealisasiController::class,'kelompokJenisAnggaran']);
     Route::get('/detail-jenis-anggaran/{id}', [AnggaranRealisasiController::class,'show'])->name('detail-jenis-anggaran.show');
     Route::get('/tambah-anggaran-realisasi', [AnggaranRealisasiController::class,'create'])->name('anggaran-realisasi.create');
@@ -83,7 +88,7 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     Route::get('/tambah-dusun', [DusunController::class,'create'])->name('dusun.create');
     Route::resource('dusun', DusunController::class)->except('create','show');
     Route::resource('detailDusun', DetailDusunController::class)->except('create','edit');
- 
+
 
 });
 
