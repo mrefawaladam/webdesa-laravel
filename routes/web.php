@@ -9,6 +9,7 @@ use App\Http\Controllers\GrafikController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PemerintahanDesaController;
 use App\Http\Controllers\SuratController;
+use App\Http\Controllers\IsiSuratController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\CetakSuratController;
 
@@ -94,8 +95,14 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     Route::get('/edit-berita/{berita}',[BeritaController::class, 'edit'])->name('berita.edit');
     Route::resource('/berita', BeritaController::class)->except('create','show','index','edit');
 
-    Route::resource('/isiSurat', 'IsiSuratController')->except('index', 'create', 'edit', 'show');
 
+    Route::post('/gallery/store', [GalleryController::class,'storeGallery'])->name('gallery.storeGallery');
+    Route::get('/kelola-gallery', [GalleryController::class, 'index'])->name('gallery.index');
+    Route::resource('/gallery', GalleryController::class)->except('index','show', 'edit', 'update', 'create');
+
+    Route::resource('/isiSurat', IsiSuratController::class)->except('index', 'create', 'edit', 'show');
+
+    Route::get('/chart-surat/{id}', [SuratController::class, 'chartSurat'])->name('chart-surat');
 
 });
 
