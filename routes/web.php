@@ -89,6 +89,10 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     Route::resource('dusun', DusunController::class)->except('create','show');
     Route::resource('detailDusun', DetailDusunController::class)->except('create','edit');
 
+    Route::get('/kelola-berita', [BeritaController::class, 'index'])->name('berita.index');
+    Route::get('/tambah-berita', [BeritaController::class, 'create'])->name('berita.create');
+    Route::get('/edit-berita/{berita}',[BeritaController::class, 'edit'])->name('berita.edit');
+    Route::resource('/berita', BeritaController::class)->except('create','show','index','edit');
 
 });
 
