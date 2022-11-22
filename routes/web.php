@@ -43,13 +43,37 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     Route::post('/keluar', [AuthController::class, 'keluar'])->name('keluar');
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
     Route::get('/pengaturan', [UserController::class,'pengaturan'])->name('pengaturan');
+
     Route::get('/profil', [UserController::class,'profil'])->name('profil');
     Route::patch('/update-pengaturan/{user}', [UserController::class, 'updatePengaturan'])->name('update-pengaturan');
     Route::patch('/update-profil/{user}', [UserController::class,'updateProfil'])->name('update-profil');
-
 
     Route::get('/surat-harian',  [HomeController::class, 'suratHarian'])->name('surat-harian');
     Route::get('/surat-bulanan',  [HomeController::class, 'suratBulanan'])->name('surat-bulanan');
     Route::get('/surat-tahunan',  [HomeController::class, 'suratTahunan'])->name('surat-tahunan');
 
+    Route::get('/tambah-penduduk', [PendudukController::class,'create'])->name('penduduk.create');
+    Route::get('/penduduk/{penduduk}', function (){return abort(404);});
+    Route::resource('penduduk', PendudukController::class)->except('create','show');
+
+    Route::get('/profil-desa', [DesaController::class, 'index'])->name('profil-desa');
+    Route::patch('/update-desa/{desa}', [DesaController::class, 'update'])->name('update-desa');
+
+    Route::get('/kelompok-jenis-anggaran/{kelompokJenisAnggaran}', 'AnggaranRealisasiController@kelompokJenisAnggaran');
+    Route::get('/detail-jenis-anggaran/{id}', 'AnggaranRealisasiController@show')->name('detail-jenis-anggaran.show');
+    Route::get('/tambah-anggaran-realisasi', 'AnggaranRealisasiController@create')->name('anggaran-realisasi.create');
+    Route::get('/anggaran-realisasi/{anggaran_realisasi}', function (){return abort(404);});
+    Route::resource('anggaran-realisasi', 'AnggaranRealisasiController')->except('create','show');
+
+    Route::get('/tambah-dusun', [DusunController::class,'create'])->name('dusun.create');
+    Route::resource('dusun', DusunController::class)->except('create','show');
+    Route::resource('detailDusun', DetailDusunController::class)->except('create','edit');
+
+    Route::get('/chart-surat/{id}', [SuratController,'chartSurat']
+    )->name('chart-surat');
+
+});
+
+Route::fallback(function () {
+    abort(404);
 });
