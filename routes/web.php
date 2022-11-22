@@ -10,6 +10,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PemerintahanDesaController;
 use App\Http\Controllers\SuratController;
 use App\Http\Controllers\VideoController;
+use App\Http\Controllers\CetakSuratController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +43,12 @@ Route::group(['middleware' => ['web', 'guest']], function () {
 });
 
 Route::group(['middleware' => ['web', 'auth']], function () {
+
+    Route::get('/tambah-surat', [SuratController::class,'create'])->name('surat.create');
+    Route::patch('/cetakSurat/{cetak_surat}/arsip', [CetakSuratController::class,'arsip'])->name('cetakSurat.arsip');
+    Route::resource('/cetakSurat', CetakSuratController::class)->except('create','store','index');
+    Route::resource('/surat', SuratController::class)->except('create');
+
     Route::post('/keluar', [AuthController::class, 'keluar'])->name('keluar');
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
     Route::get('/pengaturan', [UserController::class,'pengaturan'])->name('pengaturan');

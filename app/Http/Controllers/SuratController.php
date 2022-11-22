@@ -17,7 +17,7 @@ class SuratController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    { 
         $surat = Surat::latest()->get();
         return view('surat.index', compact('surat'));
     }
