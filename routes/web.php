@@ -94,6 +94,9 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     Route::get('/edit-berita/{berita}',[BeritaController::class, 'edit'])->name('berita.edit');
     Route::resource('/berita', BeritaController::class)->except('create','show','index','edit');
 
+    Route::resource('/isiSurat', 'IsiSuratController')->except('index', 'create', 'edit', 'show');
+
+
 });
 
 Route::fallback(function () {
