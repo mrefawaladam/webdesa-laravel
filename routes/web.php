@@ -13,6 +13,9 @@ use App\Http\Controllers\IsiSuratController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\CetakSuratController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PendudukController;
+use App\Http\Controllers\DusunController;
+use App\Http\Controllers\DesaController;
 
 
 /*
@@ -63,8 +66,10 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     Route::get('/surat-bulanan',  [HomeController::class, 'suratBulanan'])->name('surat-bulanan');
     Route::get('/surat-tahunan',  [HomeController::class, 'suratTahunan'])->name('surat-tahunan');
 
-    Route::get('/tambah-slider', 'GalleryController@create')->name('slider.create');
-    Route::get('/slider', 'GalleryController@indexSlider')->name('slider.index');
+    // Route::get('/tambah-slider', 'GalleryController@create')->name('slider.create');
+    Route::get('/tambah-slider', [GalleryController::class, 'create'])->name('slider.create');
+    // Route::get('/slider', 'GalleryController@indexSlider')->name('slider.index');
+    Route::get('/slider', [GalleryController::class, 'indexSlider'])->name('slider.index');
 
     Route::post('/video', [VideoController::class,'store'])->name('video.store');
     Route::patch('/video/update', [VideoController::class,'update'])->name('video.update');
