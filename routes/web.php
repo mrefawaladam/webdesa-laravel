@@ -12,6 +12,7 @@ use App\Http\Controllers\SuratController;
 use App\Http\Controllers\IsiSuratController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\CetakSuratController;
+use App\Http\Controllers\UserController;
 
 
 /*
