@@ -66,10 +66,10 @@
                                 aria-expanded="false">
                                 <div class="media align-items-center">
                                     <span class="avatar avatar-sm">
-                                        <img alt="{{ asset(Storage::url(auth()->user()->foto_profil)) }}" src="{{ asset(Storage::url(auth()->user()->foto_profil)) }}">
+                                        <img  src="{{ asset('img/' . Auth::user()->foto_profil) }}">
                                     </span>
                                     <div class="media-body ml-2 d-none d-lg-block">
-                                        <span class="mb-0 text-sm  font-weight-bold">{{ auth()->user()->nama }}</span>
+                                        <span class="mb-0 text-sm  font-weight-bold">{{ Auth::user()->nama }}</span>
                                     </div>
                                 </div>
                             </a>
