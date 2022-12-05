@@ -15,6 +15,7 @@ use App\Http\Controllers\CetakSuratController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PendudukController;
 use App\Http\Controllers\DusunController;
+use App\Http\Controllers\DetailDusunController;
 use App\Http\Controllers\DesaController;
 
 
