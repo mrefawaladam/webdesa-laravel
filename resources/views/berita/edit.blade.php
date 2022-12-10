@@ -9,7 +9,8 @@
     .ikon {
         font-family: fontAwesome;
     }
-    .upload-image:hover{
+
+    .upload-image:hover {
         cursor: pointer;
         opacity: 0.7;
     }
@@ -23,13 +24,15 @@
             <div class="col">
                 <div class="card shadow h-100">
                     <div class="card-header border-0">
-                        <div class="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-between text-center text-md-left">
+                        <div
+                            class="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-between text-center text-md-left">
                             <div class="mb-3">
                                 <h2 class="mb-0">Edit Berita</h2>
                                 <p class="mb-0 text-sm">Kelola Berita</p>
                             </div>
                             <div class="mb-3">
-                                <a href="{{ route('berita.index') }}" class="btn btn-success" title="Kembali"><i class="fas fa-arrow-left"></i> Kembali</a>
+                                <a href="{{ route('berita.index') }}" class="btn btn-success" title="Kembali"><i
+                                        class="fas fa-arrow-left"></i> Kembali</a>
                             </div>
                         </div>
                     </div>
@@ -49,23 +52,30 @@
                 <h3 class="mb-0">Edit Berita</h3>
             </div>
             <div class="card-body">
-                <form autocomplete="off" action="{{ route('berita.update', ["beritum" => $berita]) }}" method="post" enctype="multipart/form-data">
+                <form autocomplete="off" action="{{ route('berita.update', ["beritum" => $berita]) }}" method="post"
+                    enctype="multipart/form-data">
                     @csrf @method('patch')
                     <div class="form-group">
                         <label class="form-control-label">Gambar</label>
                         <div class="text-center">
-                            <img title="Klik untuk ganti gambar" onclick="$(this).siblings('.images').click()" class="mw-100 upload-image" style="max-height: 300px" src="{{ $berita->gambar ? asset(Storage::url($berita->gambar)) : asset('storage/upload.jpg') }}" alt="Gambar berita {{ $berita->judul }}">
-                            <input accept="image/*" onchange="uploadImage(this)" type="file" name="gambar" class="images" style="display: none">
+                            <img title="Klik untuk ganti gambar" onclick="$(this).siblings('.images').click()"
+                                class="mw-100 upload-image" style="max-height: 300px"
+                                src="{{ $berita->gambar ? asset(Storage::url($berita->gambar)) : asset('storage/upload.jpg') }}"
+                                alt="Gambar berita {{ $berita->judul }}">
+                            <input accept="image/*" onchange="uploadImage(this)" type="file" name="gambar"
+                                class="images" style="display: none">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="form-control-label">Judul</label>
-                        <input class="form-control @error('judul') is-invalid @enderror" name="judul" placeholder="Masukkan Judul ..." value="{{ old('judul', $berita->judul) }}">
+                        <input class="form-control @error('judul') is-invalid @enderror" name="judul"
+                            placeholder="Masukkan Judul ..." value="{{ old('judul', $berita->judul) }}">
                         @error('judul') <span class="invalid-feedback font-weight-bold">{{ $message }}</span> @enderror
                     </div>
                     <div class="form-group">
                         <label class="form-control-label">Konten</label>
-                        <textarea class="form-control @error('konten') is-invalid @enderror" name="konten">{{ old('konten', $berita->konten) }}</textarea>
+                        <textarea class="form-control @error('konten') is-invalid @enderror"
+                            name="konten">{{ old('konten', $berita->konten) }}</textarea>
                         @error('konten') <span class="invalid-feedback font-weight-bold">{{ $message }}</span> @enderror
                     </div>
                     <button type="submit" class="btn btn-primary btn-block" id="simpan">SIMPAN</button>
@@ -79,7 +89,7 @@
 @push('scripts')
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.js"></script>
 <script>
-    function uploadImage (inputFile) {
+    function uploadImage(inputFile) {
         if (inputFile.files && inputFile.files[0]) {
             var reader = new FileReader();
             reader.onload = function (e) {

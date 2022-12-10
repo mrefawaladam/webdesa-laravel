@@ -13,13 +13,15 @@
             <div class="col">
                 <div class="card shadow h-100">
                     <div class="card-header border-0">
-                        <div class="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-between text-center text-md-left">
+                        <div
+                            class="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-between text-center text-md-left">
                             <div class="mb-3">
                                 <h2 class="mb-0">Penduduk</h2>
                                 <p class="mb-0 text-sm">Kelola Penduduk</p>
                             </div>
                             <div class="mb-3">
-                                <a href="{{ route('penduduk.create') }}" class="btn btn-success" title="Tambah"><i class="fas fa-plus"></i> Tambah Penduduk</a>
+                                <a href="{{ route('penduduk.create') }}" class="btn btn-success" title="Tambah"><i
+                                        class="fas fa-plus"></i> Tambah Penduduk</a>
                             </div>
                         </div>
                         <form class="navbar-search mt-3 cari-none" action="{{ URL::current() }}" method="GET">
@@ -28,7 +30,8 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-search"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="Cari ...." type="text" name="cari" value="{{ request('cari') }}">
+                                    <input class="form-control" placeholder="Cari ...." type="text" name="cari"
+                                        value="{{ request('cari') }}">
                                 </div>
                             </div>
                         </form>
@@ -44,7 +47,8 @@
                         <div class="row">
                             <div class="col">
                                 <h5 class="card-title text-uppercase text-muted mb-0">Jumlah Kepala Keluarga</h5>
-                                <span class="h2 font-weight-bold mb-0">{{ $totalPenduduk->where('status_hubungan_dalam_keluarga_id',1)->count() }}</span>
+                                <span
+                                    class="h2 font-weight-bold mb-0">{{ $totalPenduduk->where('status_hubungan_dalam_keluarga_id',1)->count() }}</span>
                             </div>
                             <div class="col-auto">
                                 <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
@@ -80,7 +84,8 @@
                         <div class="row">
                             <div class="col">
                                 <h5 class="card-title text-uppercase text-muted mb-0">Jumlah Laki-laki</h5>
-                                <span class="h2 font-weight-bold mb-0">{{ $totalPenduduk->where('jenis_kelamin',1)->count() }}</span>
+                                <span
+                                    class="h2 font-weight-bold mb-0">{{ $totalPenduduk->where('jenis_kelamin',1)->count() }}</span>
                             </div>
                             <div class="col-auto">
                                 <div class="icon icon-shape bg-gradient-info text-white rounded-circle shadow">
@@ -98,7 +103,8 @@
                         <div class="row">
                             <div class="col">
                                 <h5 class="card-title text-uppercase text-muted mb-0">Jumlah Perempuan</h5>
-                                <span class="h2 font-weight-bold mb-0">{{ $totalPenduduk->where('jenis_kelamin',2)->count() }}</span>
+                                <span
+                                    class="h2 font-weight-bold mb-0">{{ $totalPenduduk->where('jenis_kelamin',2)->count() }}</span>
                             </div>
                             <div class="col-auto">
                                 <div class="icon icon-shape bg-gradient-pink text-white rounded-circle shadow">
@@ -115,7 +121,8 @@
 @endsection
 
 @section('form-search')
-<form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto" action="{{ URL::current() }}" method="GET">
+<form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto"
+    action="{{ URL::current() }}" method="GET">
     <div class="form-group mb-0">
         <div class="input-group input-group-alternative">
             <div class="input-group-prepend">
@@ -152,44 +159,47 @@
                 </thead>
                 <tbody>
                     @forelse ($penduduk as $item)
-                        <tr>
-                            <td>
-                                <a href="{{ route('penduduk.edit', $item) }}" class="btn btn-sm btn-success" data-toggle="tooltip" title="Edit"><i class="fas fa-edit"></i></a>
-                                <a class="btn btn-sm btn-danger hapus-data" data-nama="{{ $item->nama }}" data-action="{{ route("penduduk.destroy", $item) }}" data-toggle="tooltip" title="Hapus" href="#modal-hapus"><i class="fas fa-trash"></i></a>
-                            </td>
-                            <td>{{ $item->nik }}</td>
-                            <td>{{ $item->kk }}</td>
-                            <td>{{ $item->nama }}</td>
-                            <td>{{ $item->jenis_kelamin == 1 ? "Laki-laki" : "Perempuan" }}</td>
-                            <td>{{ $item->tempat_lahir }}, {{ date('d/m/Y',strtotime($item->tanggal_lahir)) }}</td>
-                            <td>{{ $item->darah ? $item->darah->golongan : '-' }}</td>
-                            <td>{{ $item->agama->nama }}</td>
-                            <td>{{ $item->pendidikan ? $item->pendidikan->nama : '-' }}</td>
-                            <td>{{ $item->pekerjaan ? $item->pekerjaan->nama : '-' }}</td>
-                            <td>{{ $item->statusPerkawinan->nama }}</td>
-                            <td>{{ $item->statusHubunganDalamKeluarga->nama }}</td>
-                            <td>
-                                @php
-                                    switch ($item->kewarganegaraan) {
-                                        case 1:
-                                            echo "WNI";
-                                            break;
-                                        case 2:
-                                            echo "WNA";
-                                            break;
-                                        case 3:
-                                            echo "Dua Kewarganegaraan";
-                                            break;
-                                    }
-                                @endphp
-                            </td>
-                            <td>{{ $item->nama_ayah }}</td>
-                            <td>{{ $item->nama_ibu }}</td>
-                        </tr>
+                    <tr>
+                        <td>
+                            <a href="{{ route('penduduk.edit', $item) }}" class="btn btn-sm btn-success"
+                                data-toggle="tooltip" title="Edit"><i class="fas fa-edit"></i></a>
+                            <a class="btn btn-sm btn-danger hapus-data" data-nama="{{ $item->nama }}"
+                                data-action="{{ route("penduduk.destroy", $item) }}" data-toggle="tooltip" title="Hapus"
+                                href="#modal-hapus"><i class="fas fa-trash"></i></a>
+                        </td>
+                        <td>{{ $item->nik }}</td>
+                        <td>{{ $item->kk }}</td>
+                        <td>{{ $item->nama }}</td>
+                        <td>{{ $item->jenis_kelamin == 1 ? "Laki-laki" : "Perempuan" }}</td>
+                        <td>{{ $item->tempat_lahir }}, {{ date('d/m/Y',strtotime($item->tanggal_lahir)) }}</td>
+                        <td>{{ $item->darah ? $item->darah->golongan : '-' }}</td>
+                        <td>{{ $item->agama->nama }}</td>
+                        <td>{{ $item->pendidikan ? $item->pendidikan->nama : '-' }}</td>
+                        <td>{{ $item->pekerjaan ? $item->pekerjaan->nama : '-' }}</td>
+                        <td>{{ $item->statusPerkawinan->nama }}</td>
+                        <td>{{ $item->statusHubunganDalamKeluarga->nama }}</td>
+                        <td>
+                            @php
+                            switch ($item->kewarganegaraan) {
+                            case 1:
+                            echo "WNI";
+                            break;
+                            case 2:
+                            echo "WNA";
+                            break;
+                            case 3:
+                            echo "Dua Kewarganegaraan";
+                            break;
+                            }
+                            @endphp
+                        </td>
+                        <td>{{ $item->nama_ayah }}</td>
+                        <td>{{ $item->nama_ibu }}</td>
+                    </tr>
                     @empty
-                        <tr>
-                            <td colspan="15" align="center">Data tidak tersedia</td>
-                        </tr>
+                    <tr>
+                        <td colspan="15" align="center">Data tidak tersedia</td>
+                    </tr>
                     @endforelse
                 </tbody>
             </table>
@@ -221,7 +231,7 @@
             </div>
 
             <div class="modal-footer">
-                <form id="form-hapus" action="" method="POST" >
+                <form id="form-hapus" action="" method="POST">
                     @csrf @method('delete')
                     <button type="submit" class="btn btn-white">Yakin</button>
                 </form>

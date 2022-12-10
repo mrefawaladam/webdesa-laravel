@@ -9,13 +9,15 @@
             <div class="col">
                 <div class="card shadow h-100">
                     <div class="card-header border-0">
-                        <div class="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-between text-center text-md-left">
+                        <div
+                            class="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-between text-center text-md-left">
                             <div class="mb-3">
                                 <h2 class="mb-0">Tambah Dusun</h2>
                                 <p class="mb-0 text-sm">Kelola Dusun</p>
                             </div>
                             <div class="mb-3">
-                                <a href="{{ route("dusun.index") }}" class="btn btn-success" title="Kembali"><i class="fas fa-arrow-left"></i> Kembali</a>
+                                <a href="{{ route("dusun.index") }}" class="btn btn-success" title="Kembali"><i
+                                        class="fas fa-arrow-left"></i> Kembali</a>
                             </div>
                         </div>
                     </div>
@@ -36,7 +38,8 @@
                     @csrf
                     <div class="form-group">
                         <label class="form-control-label" for="nama">Nama Dusun</label>
-                        <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" placeholder="Masukkan Nama Dusun ..." value="{{ old('nama') }}">
+                        <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama"
+                            placeholder="Masukkan Nama Dusun ..." value="{{ old('nama') }}">
                         @error('nama')<span class="invalid-feedback font-weight-bold">{{ $message }}</span>@enderror
                     </div>
                     <button type="submit" class="btn btn-primary btn-block" id="simpan">SIMPAN</button>

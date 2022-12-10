@@ -13,13 +13,15 @@
             <div class="col">
                 <div class="card shadow h-100">
                     <div class="card-header border-0">
-                        <div class="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-lg-between text-center text-lg-left">
+                        <div
+                            class="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-lg-between text-center text-lg-left">
                             <div class="mb-3">
                                 <h2 class="mb-0">{{ $surat->nama }}</h2>
                                 <p class="mb-0 text-sm">Kelola {{ $surat->nama }} {{ config('app.name') }}</p>
                             </div>
                             <div class="mb-3">
-                                <a href="{{ route('surat.index') }}" class="btn btn-success" title="Kembali"><i class="fas fa-arrow-left"></i> Kembali</a>
+                                <a href="{{ route('surat.index') }}" class="btn btn-success" title="Kembali"><i
+                                        class="fas fa-arrow-left"></i> Kembali</a>
                             </div>
                         </div>
                     </div>
@@ -31,7 +33,8 @@
 @endsection
 
 @section('form-search')
-<form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto" action="{{ URL::current() }}" method="GET">
+<form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto"
+    action="{{ URL::current() }}" method="GET">
     <div class="form-group mb-0">
         <div class="input-group input-group-alternative">
             <div class="input-group-prepend">
@@ -47,7 +50,8 @@
 @include('layouts.components.alert')
 <div class="card shadow mb-3">
     <div class="card-header">
-        <div class="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-lg-between text-center text-lg-left">
+        <div
+            class="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-lg-between text-center text-lg-left">
             <h2 class="mb-0">Grafik Cetak {{ $surat->nama }}</h2>
             <form action="">
                 <input type="number" name="tahun" id="tahun" class="form-control" value="{{ date('Y') }}">
@@ -60,7 +64,8 @@
 </div>
 <div class="card">
     <div class="card-header">
-        <div class="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-lg-between text-center text-lg-left">
+        <div
+            class="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-lg-between text-center text-lg-left">
             <div class="mb-3">
                 <h2 class="mb-0">Hasil Cetak</h2>
             </div>
@@ -77,58 +82,68 @@
                         <th class="text-center">#</th>
                         <th>Nomor Surat</th>
                         @php
-                            $i = 0;
+                        $i = 0;
                         @endphp
                         @foreach ($surat->isiSurat as $isiSurat)
-                            @if ($isiSurat->jenis_isi == 3)
-                                @php
-                                    $i++;
-                                @endphp
-                                <th class="text-center">{{ $isiSurat->isi }}</th>
-                            @else
-                                @php
-                                    $string = $isiSurat->isi;
-                                    preg_match_all("/\{[A-Za-z\s\(\)]+\}/", $string, $matches);
-                                @endphp
-                                @foreach ($matches[0] as $k => $value)
-                                    @php
-                                        $pertama = substr($value,1);
-                                        $hasil = substr($pertama,0,-1);
-                                        $i++;
-                                    @endphp
-                                    <th class="text-center">{{ $hasil }}</th>
-                                @endforeach
-                            @endif
+                        @if ($isiSurat->jenis_isi == 3)
+                        @php
+                        $i++;
+                        @endphp
+                        <th class="text-center">{{ $isiSurat->isi }}</th>
+                        @else
+                        @php
+                        $string = $isiSurat->isi;
+                        preg_match_all("/\{[A-Za-z\s\(\)]+\}/", $string, $matches);
+                        @endphp
+                        @foreach ($matches[0] as $k => $value)
+                        @php
+                        $pertama = substr($value,1);
+                        $hasil = substr($pertama,0,-1);
+                        $i++;
+                        @endphp
+                        <th class="text-center">{{ $hasil }}</th>
+                        @endforeach
+                        @endif
                         @endforeach
                         @if ($surat->tanda_tangan_bersangkutan == 1)
-                            <th class="text-center">Yang Bersangkutan</th>
+                        <th class="text-center">Yang Bersangkutan</th>
                         @endif
                         <th class="text-center">Tanggal Cetak</th>
                     </tr>
                 </thead>
                 <tbody>
                     @forelse ($cetakSurat as $item)
-                        <tr>
-                            <td>
-                                <a target="_blank" href="{{ route('cetakSurat.show', $item->id) }}" class="btn btn-sm btn-success" title="Detail Cetak" data-toggle="tooltip"><i class="fas fa-print"></i></a>
-                                @if ($item->arsip == 1)
-                                    <a class="btn btn-sm btn-dark arsip" data-id="" data-action="{{ route('cetakSurat.arsip',$item->id) }}"  data-toggle="tooltip" href="#arsip" title="Buka Arsip"><i class="fas fa-lock"></i></a>
-                                @else
-                                    <a href="{{ route('cetakSurat.edit',$item->id) }}" class="btn btn-sm btn-primary" title="Edit" data-toggle="tooltip"><i class="fas fa-edit"></i></a>
-                                    <a class="btn btn-sm btn-danger hapus-data" data-nama="Detail cetak surat ini" data-action="{{ route('cetakSurat.destroy',$item->id) }}" data-toggle="tooltip" href="#modal-hapus" title="Hapus"><i class="fas fa-trash"></i></a>
-                                    <a class="btn btn-sm btn-dark arsip" data-id="1" data-action="{{ route('cetakSurat.arsip',$item->id) }}"  data-toggle="tooltip" href="#arsip" title="Arsipkan"><i class="fas fa-unlock"></i></a>
-                                @endif
-                            </td>
-                            <td>{{ $item->nomor ? $item->nomor : "-" }}</td>
-                            @foreach ($item->DetailCetak as $DetailCetak)
-                                <td>{{ $DetailCetak->isian }}</td>
-                            @endforeach
-                            <td>{{ date('d/m/Y H:i' ,strtotime($item->created_at)) }}</td>
-                        </tr>
+                    <tr>
+                        <td>
+                            <a target="_blank" href="{{ route('cetakSurat.show', $item->id) }}"
+                                class="btn btn-sm btn-success" title="Detail Cetak" data-toggle="tooltip"><i
+                                    class="fas fa-print"></i></a>
+                            @if ($item->arsip == 1)
+                            <a class="btn btn-sm btn-dark arsip" data-id=""
+                                data-action="{{ route('cetakSurat.arsip',$item->id) }}" data-toggle="tooltip"
+                                href="#arsip" title="Buka Arsip"><i class="fas fa-lock"></i></a>
+                            @else
+                            <a href="{{ route('cetakSurat.edit',$item->id) }}" class="btn btn-sm btn-primary"
+                                title="Edit" data-toggle="tooltip"><i class="fas fa-edit"></i></a>
+                            <a class="btn btn-sm btn-danger hapus-data" data-nama="Detail cetak surat ini"
+                                data-action="{{ route('cetakSurat.destroy',$item->id) }}" data-toggle="tooltip"
+                                href="#modal-hapus" title="Hapus"><i class="fas fa-trash"></i></a>
+                            <a class="btn btn-sm btn-dark arsip" data-id="1"
+                                data-action="{{ route('cetakSurat.arsip',$item->id) }}" data-toggle="tooltip"
+                                href="#arsip" title="Arsipkan"><i class="fas fa-unlock"></i></a>
+                            @endif
+                        </td>
+                        <td>{{ $item->nomor ? $item->nomor : "-" }}</td>
+                        @foreach ($item->DetailCetak as $DetailCetak)
+                        <td>{{ $DetailCetak->isian }}</td>
+                        @endforeach
+                        <td>{{ date('d/m/Y H:i' ,strtotime($item->created_at)) }}</td>
+                    </tr>
                     @empty
-                        <tr>
-                            <td colspan="{{ $surat->tanda_tangan_bersangkutan ? $i + 4 : $i + 3 }}" class="text-center">Data Tidak Tersedia</td>
-                        </tr>
+                    <tr>
+                        <td colspan="{{ $surat->tanda_tangan_bersangkutan ? $i + 4 : $i + 3 }}" class="text-center">Data
+                            Tidak Tersedia</td>
+                    </tr>
                     @endforelse
                 </tbody>
             </table>
@@ -160,7 +175,7 @@
             </div>
 
             <div class="modal-footer">
-                <form id="form-hapus" action="" method="POST" >
+                <form id="form-hapus" action="" method="POST">
                     @csrf @method('delete')
                     <button type="submit" class="btn btn-white">Yakin</button>
                 </form>
@@ -187,15 +202,19 @@
         data: {}
     });
 
-    $(document).ready(function(){
-        $.get("{{ route('chart-surat',$surat->id) }}", {'tahun': $("#tahun").val()}, function (response) {
+    $(document).ready(function () {
+        $.get("{{ route('chart-surat',$surat->id) }}", {
+            'tahun': $("#tahun").val()
+        }, function (response) {
             chart.data = response;
             chart.update();
         });
 
         $("#tahun").change(function () {
             let form = this;
-            $.get("{{ route('chart-surat',$surat->id) }}", {'tahun': $(this).val()}, function (response) {
+            $.get("{{ route('chart-surat',$surat->id) }}", {
+                'tahun': $(this).val()
+            }, function (response) {
                 chart.data = response;
                 chart.update();
             });
@@ -204,7 +223,7 @@
         $(".arsip").click(function (event) {
             event.preventDefault();
             $("#arsip").val($(this).data('id'));
-            $("#form-arsip").attr('action',$(this).data('action'));
+            $("#form-arsip").attr('action', $(this).data('action'));
             $("#form-arsip").submit();
         });
     });

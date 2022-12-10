@@ -13,13 +13,15 @@
             <div class="col">
                 <div class="card shadow h-100">
                     <div class="card-header border-0">
-                        <div class="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-between text-center text-md-left">
+                        <div
+                            class="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-between text-center text-md-left">
                             <div class="mb-3">
                                 <h2 class="mb-0">Tambah Slider</h2>
                                 <p class="mb-0 text-sm">Kelola Slider {{ config('app.name') }}</p>
                             </div>
                             <div class="mb-3">
-                                <a href="{{ URL::previous() }}" class="btn btn-success" title="Kembali"><i class="fas fa-arrow-left"></i> Kembali</a>
+                                <a href="{{ URL::previous() }}" class="btn btn-success" title="Kembali"><i
+                                        class="fas fa-arrow-left"></i> Kembali</a>
                             </div>
                         </div>
                     </div>
@@ -134,7 +136,10 @@
             this.on("removedfile", function (file) {
                 $.post({
                     url: "{{ route('gallery.store') }}",
-                    data: {id: file.customName, _token: $('meta[name="csrf-token"]').attr('content')},
+                    data: {
+                        id: file.customName,
+                        _token: $('meta[name="csrf-token"]').attr('content')
+                    },
                     dataType: 'json',
                     success: function (data) {
                         total_photos_counter--;
@@ -149,6 +154,5 @@
             file["customName"] = name;
         }
     };
-
 </script>
 @endpush

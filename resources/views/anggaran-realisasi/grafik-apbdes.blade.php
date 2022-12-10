@@ -15,7 +15,8 @@
                 </div>
             </div>
             <div class="progress">
-                <div id="pendapatan-value" class="progress-bar bg-primary" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
+                <div id="pendapatan-value" class="progress-bar bg-primary" role="progressbar" aria-valuenow="0"
+                    aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
             </div>
         </div>
         <div class="progress-wrapper">
@@ -29,7 +30,8 @@
                 </div>
             </div>
             <div class="progress">
-                <div id="belanja-value" class="progress-bar bg-primary" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
+                <div id="belanja-value" class="progress-bar bg-primary" role="progressbar" aria-valuenow="0"
+                    aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
             </div>
         </div>
         <div class="progress-wrapper">
@@ -43,7 +45,8 @@
                 </div>
             </div>
             <div class="progress">
-                <div id="pembiayaan-value" class="progress-bar bg-primary" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
+                <div id="pembiayaan-value" class="progress-bar bg-primary" role="progressbar" aria-valuenow="0"
+                    aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
             </div>
         </div>
     </div>

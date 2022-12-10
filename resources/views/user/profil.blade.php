@@ -10,7 +10,8 @@ Profil {{ Auth::user()->nama }}
 
 @section('content-header')
 
-<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="background-image: url({{ asset('/img/cover-bg-profil.jpg') }}); background-size: cover; background-position: center top;">
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
+    style="background-image: url({{ asset('/img/cover-bg-profil.jpg') }}); background-size: cover; background-position: center top;">
 
     <!-- Mask -->
     <span class="mask bg-gradient-primary opacity-6"></span>
@@ -35,13 +36,16 @@ Profil {{ Auth::user()->nama }}
                 <div class="col-lg-3 order-lg-2">
                     <div class="card-profile-image">
                         <a href="{{ asset(Storage::url(auth()->user()->foto_profil)) }}" data-fancybox>
-                            <img id="foto_profil" src="{{asset('img/' . Auth::user()->foto_profil)}}" alt="{{asset(Storage::url(auth()->user()->foto_profil))}}" class="rounded-circle" style="height: 150px; width: 150px; object-fit: cover">
+                            <img id="foto_profil" src="{{asset('img/' . Auth::user()->foto_profil)}}"
+                                alt="{{asset(Storage::url(auth()->user()->foto_profil))}}" class="rounded-circle"
+                                style="height: 150px; width: 150px; object-fit: cover">
                         </a>
                     </div>
                 </div>
             </div>
             <div class="card-header text-center border-0 pt-md-4 pb-0 pb-md-4">
-                <a id="btn-ganti-foto_profil" href="#input-foto_profil" class="btn btn-sm btn-default mt-5"><span class="fas fa-camera"></span> Ganti</a>
+                <a id="btn-ganti-foto_profil" href="#input-foto_profil" class="btn btn-sm btn-default mt-5"><span
+                        class="fas fa-camera"></span> Ganti</a>
             </div>
             <div class="card-body pt-0 pt-md-4 pt-5">
                 <div class="text-center">
@@ -75,16 +79,21 @@ Profil {{ Auth::user()->nama }}
                     <div class="pl-lg-4">
                         <div class="form-group">
                             <label class="form-control-label" for="input-nama">Nama</label>
-                            <input name="nama" type="text" id="input-nama" class="form-control form-control-alternative @error('nama') is-invalid @enderror" placeholder="Masukkan nama ..." value="{{ old('nama',auth()->user()->nama) }}">
+                            <input name="nama" type="text" id="input-nama"
+                                class="form-control form-control-alternative @error('nama') is-invalid @enderror"
+                                placeholder="Masukkan nama ..." value="{{ old('nama',auth()->user()->nama) }}">
                             @error('nama')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label class="form-control-label" for="input-email">Email <a href="{{ route('pengaturan') }}" class="badge badge-primary" title="Ganti email"><span class="fas fa-edit"></span></a></label>
-                            <input type="email" id="input-email" class="form-control form-control-alternative" value="{{ auth()->user()->email }}" disabled>
+                            <label class="form-control-label" for="input-email">Email <a
+                                    href="{{ route('pengaturan') }}" class="badge badge-primary"
+                                    title="Ganti email"><span class="fas fa-edit"></span></a></label>
+                            <input type="email" id="input-email" class="form-control form-control-alternative"
+                                value="{{ auth()->user()->email }}" disabled>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">Simpan Perubahan</button>
@@ -101,14 +110,15 @@ Profil {{ Auth::user()->nama }}
 <script src="{{ asset('js/jquery.fancybox.js') }}"></script>
 
 <script>
-    $(document).ready(function(){
+    $(document).ready(function () {
         $('#btn-ganti-foto_profil').on('click', function () {
             $('#input-foto_profil').click();
         });
 
-        $(document).on("submit","form", function () {
-            $(this).children("button:submit").attr('disabled','disabled');
-            $(this).children("button:submit").html(`<img height="20px" src="{{ url('/storage/loading.gif') }}" alt=""> Loading ...`);
+        $(document).on("submit", "form", function () {
+            $(this).children("button:submit").attr('disabled', 'disabled');
+            $(this).children("button:submit").html(
+                `<img height="20px" src="{{ url('/storage/loading.gif') }}" alt=""> Loading ...`);
         });
 
         $('#input-foto_profil').on('change', function () {
@@ -128,11 +138,13 @@ Profil {{ Auth::user()->nama }}
                     cache: false,
                     processData: false,
                     beforeSend: function () {
-                        $('#img-foto_profil').attr('src', "{{ url('/storage/loading.gif') }}");
+                        $('#img-foto_profil').attr('src',
+                            "{{ url('/storage/loading.gif') }}");
                     },
                     success: function (data) {
                         if (data.error) {
-                            $('#img-foto_profil').attr('src', $("#img-foto_profil").attr('alt'));
+                            $('#img-foto_profil').attr('src', $("#img-foto_profil").attr(
+                                'alt'));
                         } else {
                             location.reload();
                         }

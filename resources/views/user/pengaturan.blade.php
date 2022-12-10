@@ -9,13 +9,15 @@
             <div class="col">
                 <div class="card shadow h-100">
                     <div class="card-header border-0">
-                        <div class="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-between text-center text-md-left">
+                        <div
+                            class="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-between text-center text-md-left">
                             <div class="mb-3">
                                 <h2 class="mb-0">PENGATURAN</h2>
                                 <p class="mb-0 text-sm">Akun Pengguna {{ config('app.name') }}</p>
                             </div>
                             <div class="mb-3">
-                                <a href="{{ route('profil') }}" class="btn btn-success" title="Kembali"><i class="fas fa-arrow-left"></i> Kembali</a>
+                                <a href="{{ route('profil') }}" class="btn btn-success" title="Kembali"><i
+                                        class="fas fa-arrow-left"></i> Kembali</a>
                             </div>
                         </div>
                     </div>
@@ -42,15 +44,19 @@
                         <p class="mb-3">Biarkan kosong jika tidak ingin mengubah email.</p>
                         <div class="form-group">
                             <label class="form-control-label" for="email_lama">Email Lama</label>
-                            <input readonly class="form-control form-control-alternative @error('nama') is-invalid @enderror" type="email" placeholder="Email saat ini" value="{{ Auth::user()->email }}">
+                            <input readonly
+                                class="form-control form-control-alternative @error('nama') is-invalid @enderror"
+                                type="email" placeholder="Email saat ini" value="{{ Auth::user()->email }}">
                         </div>
                         <div class="form-group">
                             <label class="form-control-label" for="email_baru">Email Baru</label>
-                            <input class="form-control form-control-alternative @error('email') is-invalid @enderror" type="email" name="email" id="email" placeholder="Masukkan alamat email baru ..." value="{{ old('email') }}">
+                            <input class="form-control form-control-alternative @error('email') is-invalid @enderror"
+                                type="email" name="email" id="email" placeholder="Masukkan alamat email baru ..."
+                                value="{{ old('email') }}">
                             @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
                             @enderror
                         </div>
                     </div>
@@ -59,30 +65,39 @@
                         <p class="mb-3">Biarkan kosong jika tidak ingin mengubah Password.</p>
                         <div class="form-group">
                             <label class="form-control-label" for="password">Password Baru</label>
-                            <input class="form-control form-control-alternative @error('password') is-invalid @enderror" type="password" name="password" id="password" placeholder="Masukkan password baru" value="{{ old('password') }}">
+                            <input class="form-control form-control-alternative @error('password') is-invalid @enderror"
+                                type="password" name="password" id="password" placeholder="Masukkan password baru"
+                                value="{{ old('password') }}">
                             @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label class="form-control-label" for="password_confirmation">Konfirmasi Password Baru</label>
-                            <input class="form-control form-control-alternative @error('password_confirmation') is-invalid @enderror" type="password" name="password_confirmation" id="password_confirmation" placeholder="Masukkan password baru" value="{{ old('password_confirmation') }}">
+                            <label class="form-control-label" for="password_confirmation">Konfirmasi Password
+                                Baru</label>
+                            <input
+                                class="form-control form-control-alternative @error('password_confirmation') is-invalid @enderror"
+                                type="password" name="password_confirmation" id="password_confirmation"
+                                placeholder="Masukkan password baru" value="{{ old('password_confirmation') }}">
                             @error('password_confirmation')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
                             @enderror
                         </div>
                     </div>
                     <div class="form-group mt-5">
-                        <label class="form-control-label" for="password_lama">Password <span class="text-danger">*</span></label>
-                        <input required class="form-control form-control-alternative @error('password_lama') is-invalid @enderror" type="password" name="password_lama" id="password_lama" placeholder="Masukkan password">
+                        <label class="form-control-label" for="password_lama">Password <span
+                                class="text-danger">*</span></label>
+                        <input required
+                            class="form-control form-control-alternative @error('password_lama') is-invalid @enderror"
+                            type="password" name="password_lama" id="password_lama" placeholder="Masukkan password">
                         @error('password_lama')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
                         @enderror
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">PERBARUI</button>
@@ -96,9 +111,10 @@
 @push('scripts')
 <script>
     $(document).ready(function () {
-        $(document).on("submit","form", function () {
-            $(this).children("button:submit").attr('disabled','disabled');
-            $(this).children("button:submit").html(`<img height="20px" src="{{ url('/storage/loading.gif') }}" alt=""> Loading ...`);
+        $(document).on("submit", "form", function () {
+            $(this).children("button:submit").attr('disabled', 'disabled');
+            $(this).children("button:submit").html(
+                `<img height="20px" src="{{ url('/storage/loading.gif') }}" alt=""> Loading ...`);
         });
     });
 </script>

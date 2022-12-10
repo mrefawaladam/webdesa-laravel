@@ -9,13 +9,15 @@
             <div class="col">
                 <div class="card shadow">
                     <div class="card-header border-0">
-                        <div class="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-between text-center text-md-left">
+                        <div
+                            class="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-between text-center text-md-left">
                             <div class="mb-3">
                                 <h2 class="mb-0">Edit Dusun</h2>
                                 <p class="mb-0 text-sm">Kelola Dusun</p>
                             </div>
                             <div class="mb-3">
-                                <a href="{{ route("dusun.index") }}" class="btn btn-success" title="Kembali"><i class="fas fa-arrow-left"></i> Kembali</a>
+                                <a href="{{ route("dusun.index") }}" class="btn btn-success" title="Kembali"><i
+                                        class="fas fa-arrow-left"></i> Kembali</a>
                             </div>
                         </div>
                     </div>
@@ -36,7 +38,8 @@
                     @csrf @method('patch')
                     <div class="form-group">
                         <label class="form-control-label" for="nama">Nama Dusun</label>
-                        <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" placeholder="Masukkan Nama Dusun ..." value="{{ old('nama', $dusun->nama) }}">
+                        <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama"
+                            placeholder="Masukkan Nama Dusun ..." value="{{ old('nama', $dusun->nama) }}">
                         @error('nama')<span class="invalid-feedback font-weight-bold">{{ $message }}</span>@enderror
                     </div>
                     <button type="submit" class="btn btn-primary btn-block" id="simpan">SIMPAN</button>
@@ -49,7 +52,8 @@
             <div class="card-header">
                 <div class="d-flex justify-content-between">
                     <h2 class="mb-0">Detail Dusun</h2>
-                    <a href="#modal-tambah-detail-dusun" data-toggle="modal" class="btn btn-success btn-sm"><i class="fas fa-plus"></i> Tambah</a>
+                    <a href="#modal-tambah-detail-dusun" data-toggle="modal" class="btn btn-success btn-sm"><i
+                            class="fas fa-plus"></i> Tambah</a>
                 </div>
             </div>
             <div class="card-body">
@@ -63,19 +67,25 @@
                         </thead>
                         <tbody>
                             @forelse ($dusun->detailDusun as $item)
-                                <tr>
-                                    <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $item->rw }}</td>
-                                    <td>{{ $item->rt }}</td>
-                                    <td>
-                                        <a href="#modal-edit-detail-dusun" class="btn btn-sm btn-success edit" data-get="{{ route('detailDusun.show', $item) }}" data-action="{{ route('detailDusun.update', $item) }}" data-toggle="tooltip" title="Edit"><i class="fas fa-edit"></i></a>
-                                        <a class="btn btn-sm btn-danger hapus-data" data-nama="RT/RW {{ $item->rt }}/{{ $item->rw }}" data-action="{{ route("detailDusun.destroy", $item) }}" data-toggle="tooltip" title="Hapus" href="#modal-hapus"><i class="fas fa-trash"></i></a>
-                                    </td>
-                                </tr>
+                            <tr>
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $item->rw }}</td>
+                                <td>{{ $item->rt }}</td>
+                                <td>
+                                    <a href="#modal-edit-detail-dusun" class="btn btn-sm btn-success edit"
+                                        data-get="{{ route('detailDusun.show', $item) }}"
+                                        data-action="{{ route('detailDusun.update', $item) }}" data-toggle="tooltip"
+                                        title="Edit"><i class="fas fa-edit"></i></a>
+                                    <a class="btn btn-sm btn-danger hapus-data"
+                                        data-nama="RT/RW {{ $item->rt }}/{{ $item->rw }}"
+                                        data-action="{{ route("detailDusun.destroy", $item) }}" data-toggle="tooltip"
+                                        title="Hapus" href="#modal-hapus"><i class="fas fa-trash"></i></a>
+                                </td>
+                            </tr>
                             @empty
-                                <tr>
-                                    <td colspan="4" align="center">Data tidak tersedia</td>
-                                </tr>
+                            <tr>
+                                <td colspan="4" align="center">Data tidak tersedia</td>
+                            </tr>
                             @endforelse
                         </tbody>
                     </table>
@@ -108,7 +118,7 @@
             </div>
 
             <div class="modal-footer">
-                <form id="form-hapus" action="" method="POST" >
+                <form id="form-hapus" action="" method="POST">
                     @csrf @method('delete')
                     <button type="submit" class="btn btn-white">Yakin</button>
                 </form>
@@ -119,7 +129,8 @@
     </div>
 </div>
 
-<div class="modal fade" id="modal-edit-detail-dusun" tabindex="-1" role="dialog" aria-labelledby="modal-edit-detail-dusun" aria-hidden="true">
+<div class="modal fade" id="modal-edit-detail-dusun" tabindex="-1" role="dialog"
+    aria-labelledby="modal-edit-detail-dusun" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -151,7 +162,8 @@
     </div>
 </div>
 
-<div class="modal fade" id="modal-tambah-detail-dusun" tabindex="-1" role="dialog" aria-labelledby="modal-tambah-detail-dusun" aria-hidden="true">
+<div class="modal fade" id="modal-tambah-detail-dusun" tabindex="-1" role="dialog"
+    aria-labelledby="modal-tambah-detail-dusun" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -162,7 +174,8 @@
             </div>
 
             <div class="modal-body">
-                <form class="form" data-redirect="{{ route('dusun.edit',$dusun) }}" action="{{ route("detailDusun.store") }}" method="POST">
+                <form class="form" data-redirect="{{ route('dusun.edit',$dusun) }}"
+                    action="{{ route("detailDusun.store") }}" method="POST">
                     @csrf
                     <input type="hidden" name="dusun_id" value="{{ $dusun->id }}">
                     <div class="form-group">
@@ -193,8 +206,8 @@
         $.ajax({
             url: $(this).data('get'),
             method: 'get',
-            beforeSend: function (){
-                $(btn).attr('disabled','disabled');
+            beforeSend: function () {
+                $(btn).attr('disabled', 'disabled');
                 $(btn).html(`<img height="20px" src="${baseURL}/storage/loading.gif" alt="">`);
             },
             success: function (response) {
@@ -207,7 +220,7 @@
         });
     });
 
-    $(document).on('submit', '.form', function(event) {
+    $(document).on('submit', '.form', function (event) {
         event.preventDefault();
         const form = this;
         const url = $(this).attr('action');
@@ -220,7 +233,7 @@
             contentType: false,
             cache: false,
             processData: false,
-            success: function(result){
+            success: function (result) {
                 $(form).find("button:submit").html('Simpan');
                 $(form).find("button:submit").removeAttr('disabled');
                 if (result.success) {
@@ -240,7 +253,7 @@
                 alertError();
                 let focus = true;
                 $.each(response.responseJSON.errors, function (i, e) {
-                    $('#pesanError').append(`<li>`+e+`</li>`);
+                    $('#pesanError').append(`<li>` + e + `</li>`);
                     if (!$(form).find("[name='" + i + "']").hasClass('is-invalid')) {
                         $(form).find("[name='" + i + "']").addClass('is-invalid');
                         if (focus) {
