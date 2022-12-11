@@ -44,7 +44,7 @@ class GalleryController extends Controller
             array_push($galleries, $gambar);
         }
 
-        usort($galleries, function($a, $b) {
+        usort($galleries, function($a, $b) { 
             return $a['created_at'] < $b['created_at'];
         });
 
