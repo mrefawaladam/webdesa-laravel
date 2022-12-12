@@ -63,7 +63,7 @@
                                 src="{{ $pemerintahan_desa->gambar ? asset(Storage::url($pemerintahan_desa->gambar)) : asset('storage/upload.jpg') }}"
                                 alt="Gambar berita {{ $pemerintahan_desa->judul }}">
                             <input accept="image/*" onchange="uploadImage(this)" type="file" name="gambar"
-                                class="images" style="display: none">
+                                class="images"  >
                         </div>
                     </div>
                     <div class="form-group">

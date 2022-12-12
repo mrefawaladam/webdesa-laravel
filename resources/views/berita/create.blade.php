@@ -52,8 +52,7 @@
                 <h3 class="mb-0">Tambah Berita</h3>
             </div>
             <div class="card-body">
-                <form autocomplete="off" action="{{ route('berita.store') }}" method="post"
-                    enctype="multipart/form-data">
+                <form autocomplete="off" action="{{ route('berita.store') }}" method="post"  enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label class="form-control-label">Gambar</label>
@@ -61,7 +60,7 @@
                             <img onclick="$(this).siblings('.images').click()" class="mw-100 upload-image"
                                 style="max-height: 300px" src="{{ asset('storage/upload.jpg') }}" alt="">
                             <input accept="image/*" onchange="uploadImage(this)" type="file" name="gambar"
-                                class="images" style="display: none">
+                                class="images" >
                         </div>
                     </div>
                     <div class="form-group">

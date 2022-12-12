@@ -61,7 +61,7 @@
                             <img onclick="$(this).siblings('.images').click()" class="mw-100 upload-image"
                                 style="max-height: 300px" src="{{ asset('storage/upload.jpg') }}" alt="">
                             <input accept="image/*" onchange="uploadImage(this)" type="file" name="gambar"
-                                class="images" style="display: none">
+                                class="images"  >
                         </div>
                     </div>
                     <div class="form-group">

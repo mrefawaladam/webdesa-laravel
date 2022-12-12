@@ -103,7 +103,7 @@ Profil {{ Auth::user()->nama }}
     </div>
 </div>
 
-<input type="file" name="foto_profil" id="input-foto_profil" style="display: none">
+<input type="file" name="foto_profil" id="input-foto_profil"  >
 @endsection
 
 @push('scripts')

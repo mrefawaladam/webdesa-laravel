@@ -76,7 +76,7 @@
                         <label class="form-control-label">Gambar</label>
                         <div class="text-center">
                             <img onclick="$(this).siblings('.images').click()" class="mw-100 upload-image" style="max-height: 300px" src="{{ asset('storage/upload.jpg') }}" alt="">
-                            <input accept="image/*" onchange="uploadImage(this)" type="file" name="gambar" class="images" style="display: none">
+                            <input accept="image/*" onchange="uploadImage(this)" type="file" name="gambar" class="images"  >
                             <span class="invalid-feedback font-weight-bold"></span>
                         </div>
                     </div>
