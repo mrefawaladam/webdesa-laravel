@@ -137,37 +137,6 @@ $desa = App\Desa::find(1);
                                 <a class="dropdown-item" href="{{ url('dashboard') }}">
                                     <i class="fas fa-fw fa-tachometer-alt text-blue"></i> Dashboard
                                 </a>
-                                <a class="dropdown-item" href="{{ url('penduduk.index') }}">
-                                    <i class="fas fa-fw fa-users text-info"></i> Kelola Penduduk
-                                </a>
-                                <a class="dropdown-item" href="{{ url('dusun.index') }}">
-                                    <i class="fas fa-fw fa-map-marker-alt text-yellow"></i> Kelola Dusun
-                                </a>
-                                <a class="dropdown-item"
-                                    href="{{ url('anggaran-realisasi?jenis=pendapatan&tahun='.date('Y')) }}">
-                                    <i class="fas fa-fw fa-coins text-success"></i> Kelola APBDes
-                                </a>
-                                <a class="dropdown-item" href="{{ url('surat.index') }}">
-                                    <i class="fas fa-fw fa-file-alt text-primary"></i> Kelola Surat
-                                </a>
-                                <a href="{{ url('pemerintahan-desa.index') }}" class="dropdown-item">
-                                    <i class="fas fa-fw fa-atlas text-success"></i> Kelola Informasi Pemerintahan Desa
-                                </a>
-                                <a href="{{ url('berita.index') }}" class="dropdown-item">
-                                    <i class="fas fa-fw fa-newspaper text-cyan"></i> Kelola Berita
-                                </a>
-                                <a class="dropdown-item" href="{{ url('gallery.index') }}">
-                                    <i class="fas fa-fw fa-images text-orange"></i> Kelola Gallery
-                                </a>
-                                <a class="dropdown-item" href="{{ url('slider.index') }}">
-                                    <i class="fas fa-fw fa-images text-purple"></i> Kelola Slider
-                                </a>
-                                <a class="dropdown-item" href="{{ url('profil-desa') }}">
-                                    <i class="fas fa-fw fa-users text-info"></i> Profil Desa
-                                </a>
-                                <a class="dropdown-item" href="{{ url('profil') }}">
-                                    <i class="fas fa-fw fa-user text-yellow"></i> Profil Saya
-                                </a>
                                 <hr class="m-0">
                                 <a class="dropdown-item" href="{{ url('keluar') }}"
                                     onclick="event.preventDefault(); document.getElementById('form-keluar').submit();">
