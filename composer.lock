@@ -6027,6 +6027,7 @@
             "time": "2020-07-09T08:09:16+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "laravel/dusk",
             "version": "v7.1.1",
             "source": {
@@ -6109,6 +6110,17 @@
             },
             "dist": {
                 "type": "zip",
+=======
+            "name": "laravel/pint",
+            "version": "v1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/pint.git",
+                "reference": "e60e2112ee779ce60f253695b273d1646a17d6f1"
+            },
+            "dist": {
+                "type": "zip",
+>>>>>>> 53c940e2014c037da404712c044e9ef66ed3f7b9
                 "url": "https://api.github.com/repos/laravel/pint/zipball/e60e2112ee779ce60f253695b273d1646a17d6f1",
                 "reference": "e60e2112ee779ce60f253695b273d1646a17d6f1",
                 "shasum": ""
@@ -6556,6 +6568,7 @@
             "time": "2022-02-21T01:04:05+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "php-webdriver/webdriver",
             "version": "1.13.1",
             "source": {
@@ -6630,6 +6643,17 @@
             },
             "dist": {
                 "type": "zip",
+=======
+            "name": "phpunit/php-code-coverage",
+            "version": "9.2.20",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
+                "reference": "af7463c955007de36db0c5e26d03e2f933c2e980"
+            },
+            "dist": {
+                "type": "zip",
+>>>>>>> 53c940e2014c037da404712c044e9ef66ed3f7b9
                 "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/af7463c955007de36db0c5e26d03e2f933c2e980",
                 "reference": "af7463c955007de36db0c5e26d03e2f933c2e980",
                 "shasum": ""

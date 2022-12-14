@@ -123,4 +123,20 @@ describe('Kelola Berita', () => {
     cy.get('span').contains('The gambar field is required')
   })
 
+  it('Admin can Hapus Berita', () => {
+    cy.visit('http://localhost:8000/masuk')
+
+    cy.get('input[name=email]').type('admin@gmail.com')
+    cy.get('input[name=password]').type('password')
+    cy.get('button').contains('Masuk').click()
+    cy.url().should('contain', 'http://localhost:8000/dashboard')
+
+    cy.get('a').contains('Kelola Berita').click()
+    cy.url().should('contain', 'http://localhost:8000/kelola-berita')
+
+    cy.get(':nth-child(1) > .card > .card-body > :nth-child(2) > .btn-danger').click()
+    cy.get('#form-hapus > .btn').click()
+    cy.get('div').contains('Berita berhasil dihapus')
+  })
+
 })

@@ -146,8 +146,6 @@ Profil Desa
         </div>
     </div>
 </div>
-
-<input type="file" name="logo" id="input-logo" >
 @endsection
 
 @push('scripts')

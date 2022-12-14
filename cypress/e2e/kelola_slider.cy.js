@@ -1,5 +1,5 @@
-describe('Kelola Galeri', () => {
-  it('Admin can open Kelola Galeri', () => {
+describe('Kelola Slider', () => {
+  it('Admin can open Kelola Slider', () => {
     cy.visit('http://localhost:8000/masuk')
 
     cy.get('input[name=email]').type('admin@gmail.com')
@@ -7,8 +7,8 @@ describe('Kelola Galeri', () => {
     cy.get('button').contains('Masuk').click()
     cy.url().should('contain', 'http://localhost:8000/dashboard')
 
-    cy.get('a').contains('Kelola Gallery').click()
-    cy.url().should('contain', 'http://localhost:8000/kelola-gallery')
+    cy.get('a').contains('Kelola Slider').click()
+    cy.url().should('contain', 'http://localhost:8000/slider')
   })
 
   it('Admin can Batal Tambah Gambar', () => {
@@ -19,8 +19,8 @@ describe('Kelola Galeri', () => {
     cy.get('button').contains('Masuk').click()
     cy.url().should('contain', 'http://localhost:8000/dashboard')
 
-    cy.get('a').contains('Kelola Gallery').click()
-    cy.url().should('contain', 'http://localhost:8000/kelola-gallery')
+    cy.get('a').contains('Kelola Slider').click()
+    cy.url().should('contain', 'http://localhost:8000/slider')
 
     cy.get('a').contains('Tambah Gambar').click()
     cy.get('.d-flex > .btn-white').click()
@@ -34,8 +34,8 @@ describe('Kelola Galeri', () => {
     cy.get('button').contains('Masuk').click()
     cy.url().should('contain', 'http://localhost:8000/dashboard')
 
-    cy.get('a').contains('Kelola Gallery').click()
-    cy.url().should('contain', 'http://localhost:8000/kelola-gallery')
+    cy.get('a').contains('Kelola Slider').click()
+    cy.url().should('contain', 'http://localhost:8000/slider')
 
     cy.get('a').contains('Tambah Gambar').click()
     cy.get('input[name=gambar]').selectFile('cypress/fixtures/linkaja.png')
@@ -53,8 +53,8 @@ describe('Kelola Galeri', () => {
     cy.get('button').contains('Masuk').click()
     cy.url().should('contain', 'http://localhost:8000/dashboard')
 
-    cy.get('a').contains('Kelola Gallery').click()
-    cy.url().should('contain', 'http://localhost:8000/kelola-gallery')
+    cy.get('a').contains('Kelola Slider').click()
+    cy.url().should('contain', 'http://localhost:8000/slider')
 
     cy.get('.col-lg-4 > .mb-0').click()
     cy.get('#form-hapus > .btn').click()
