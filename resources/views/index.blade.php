@@ -99,7 +99,7 @@
                 Tahun : <input type="number" name="tahun-apbdes" id="tahun-apbdes" class="form-control-sm"
                     value="{{ date('Y') }}" style="width:80px">
                 <img id="loading-tahun" src="{{ asset(Storage::url('loading.gif')) }}" alt="Loading" height="20px"
-                    style="display: none">
+                   >
             </div>
         </div>
     </div>
