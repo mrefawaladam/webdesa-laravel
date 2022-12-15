@@ -26,6 +26,7 @@ class KeluarTest extends TestCase
 
                 $response = $this->post('keluar');
 
+
                 $response->assertStatus(302);
 
     }
