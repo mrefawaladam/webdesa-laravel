@@ -50,13 +50,13 @@ class KelolaSliderTest extends TestCase
 
         $user = User::firstwhere('email', 'admin@gmail.com');
 
-         $galeri = Gallery::create([
+        $slider = Gallery::create([
             'gallery' => UploadedFile::fake()->image('avatar.jpg'),
             'slider' => 1,
             'caption' => 'Caption Test'
         ]);
 
-        $response = $this->actingAs($user)->delete(route('gallery.destroy', $galeri->id));
+        $response = $this->actingAs($user)->delete(route('gallery.destroy', $slider->id));
         $response->assertStatus(302);
     }
 }
