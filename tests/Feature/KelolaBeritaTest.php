@@ -33,7 +33,7 @@ class KelolaBeritaTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function test_admin_can_tambah_kelola_berita()
+    public function test_admin_can_tambah_berita()
     {
         Storage::fake('avatars');
 
@@ -47,7 +47,7 @@ class KelolaBeritaTest extends TestCase
         $response->assertStatus(302);
     }
 
-    public function test_judul_field_is_required_when_tambah_kelola_berita()
+    public function test_judul_field_is_required_when_tambah_berita()
     {
         Storage::fake('avatars');
 
@@ -64,7 +64,7 @@ class KelolaBeritaTest extends TestCase
         $response->assertStatus(302);
     }
 
-    public function test_konten_field_is_required_when_tambah_kelola_berita()
+    public function test_konten_field_is_required_when_tambah_berita()
     {
         Storage::fake('avatars');
 
@@ -81,7 +81,7 @@ class KelolaBeritaTest extends TestCase
         $response->assertStatus(302);
     }
 
-    public function test_gambar_field_is_required_when_tambah_kelola_berita()
+    public function test_gambar_field_is_required_when_tambah_berita()
     {
         Storage::fake('avatars');
 
@@ -98,7 +98,7 @@ class KelolaBeritaTest extends TestCase
         $response->assertStatus(302);
     }
 
-    public function test_all_field_are_required_when_tambah_kelola_berita()
+    public function test_all_field_are_required_when_tambah_berita()
     {
         Storage::fake('avatars');
 
