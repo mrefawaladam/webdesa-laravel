@@ -10,14 +10,14 @@ use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
 
-class KelolaGaleriTest extends TestCase
+class KelolaSliderTest extends TestCase
 {
     /**
      * A basic feature test example.
      *
      * @return void
      */
-    public function test_admin_can_access_kelola_galeri()
+    public function test_admin_can_access_kelola_slider()
     {
         $credential = [
             'email' => 'admin@gmail.com',
@@ -26,16 +26,17 @@ class KelolaGaleriTest extends TestCase
 
         $response = $this->post('masuk',$credential);
 
-        $response = $this->get('http://localhost:8000/kelola-gallery');
+        $response = $this->get('http://localhost:8000/slider');
         $response->assertStatus(200);
     }
 
-    public function test_admin_can_tambah_galeri()
+    public function test_admin_can_tambah_slider()
     {
         Storage::fake('avatars');
 
         $response = $this->withoutMiddleware()->post('gallery', [
             'gambar' => UploadedFile::fake()->image('avatar.jpg'),
+            'slider' => 1,
             'caption' => 'Caption Test'
         ]);
 
@@ -43,7 +44,7 @@ class KelolaGaleriTest extends TestCase
         $response->assertStatus(302);
     }
 
-    public function test_admin_can_hapus_galeri()
+    public function test_admin_can_hapus_slider()
     {
         Storage::fake('avatars');
 
@@ -51,6 +52,7 @@ class KelolaGaleriTest extends TestCase
 
          $galeri = Gallery::create([
             'gallery' => UploadedFile::fake()->image('avatar.jpg'),
+            'slider' => 1,
             'caption' => 'Caption Test'
         ]);
 
