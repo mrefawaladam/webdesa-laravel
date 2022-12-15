@@ -15,7 +15,8 @@ class LayananSuratTest extends TestCase
      */
     public function test_user_can_open_layanan_surat()
     {
-         
+        $response = $this->get('http://localhost:8000/layanan-surat');
+
         $response->assertStatus(200);
     }
 }
