@@ -13,9 +13,6 @@ describe('Profil Saya', () => {
         cy.url().should('contain', 'http://localhost:8000/profil')
       })
 
-    //   cy.get('#input-nama')
-    //   cy.get('form > .btn')
-
     it('Admin can edit Profil Saya', () => {
         cy.visit('http://localhost:8000/masuk')
 
