@@ -17,7 +17,6 @@ class DashboadTest extends TestCase
      */
     public function test_can_open_dashboard()
     {
-        // $this->seed();
         $user = User::find(1);
         $response = $this->actingAs($user)->get('/dashboard');
         $response->assertStatus(200);
@@ -26,7 +25,6 @@ class DashboadTest extends TestCase
 
     public function test_grafik_surat_harian()
     {
-        // $this->seed();
         $user = User::find(1);
         $response = $this->actingAs($user)->get('/dashboard');
         $response->assertSeeText('Grafik Cetak Surat Harian');   
