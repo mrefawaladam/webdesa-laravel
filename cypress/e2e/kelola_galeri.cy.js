@@ -45,6 +45,24 @@ describe('Kelola Galeri', () => {
     cy.get('div').contains('Gambar berhasil ditambahkan')
   })
 
+  it('Gambar field is required when Tambah Gambar', () => {
+    cy.visit('http://localhost:8000/masuk')
+
+    cy.get('input[name=email]').type('admin@gmail.com')
+    cy.get('input[name=password]').type('password')
+    cy.get('button').contains('Masuk').click()
+    cy.url().should('contain', 'http://localhost:8000/dashboard')
+
+    cy.get('a').contains('Kelola Gallery').click()
+    cy.url().should('contain', 'http://localhost:8000/kelola-gallery')
+
+    cy.get('a').contains('Tambah Gambar').click()
+    cy.get('textarea[name=caption]').type('Ini adalah caption')
+    cy.get('.d-flex > .btn-primary').click()
+
+    cy.get('div').contains('The gambar field is required.')
+  })
+
   it('Admin can Hapus Gambar', () => {
     cy.visit('http://localhost:8000/masuk')
 

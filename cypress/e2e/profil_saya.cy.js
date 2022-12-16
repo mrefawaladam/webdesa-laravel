@@ -13,7 +13,7 @@ describe('Profil Saya', () => {
         cy.url().should('contain', 'http://localhost:8000/profil')
       })
 
-    it('Admin can edit Profil Saya', () => {
+    it('Admin can edit Akun Saya', () => {
         cy.visit('http://localhost:8000/masuk')
 
         cy.get('input[name=email]').type('admin@gmail.com')
@@ -46,8 +46,8 @@ describe('Profil Saya', () => {
         cy.get('.navbar-nav > .nav-item > .dropdown-menu > [href="http://localhost:8000/profil"]').click()
         cy.url().should('contain', 'http://localhost:8000/profil')
 
-        cy.get('#btn-ganti-foto_profil').selectFile('cypress/fixtures/linkaja.png')
-        cy.url().should('contain', 'http://localhost:8000/profil')
+        cy.get('a').contains('Ganti').click()
+        cy.url().should('contain', 'http://localhost:8000/profil#input-foto_profil')
       })
 
       it('Admin can edit Email', () => {
