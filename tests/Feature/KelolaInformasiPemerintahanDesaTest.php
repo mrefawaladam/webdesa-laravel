@@ -8,9 +8,6 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
-
-
-
 class KelolaInformasiPemerintahanDesaTest extends TestCase
 {
     /**
@@ -21,7 +18,7 @@ class KelolaInformasiPemerintahanDesaTest extends TestCase
 
     use RefreshDatabase;
 
-    public function test_admin_dapat_melihat_informasi_pemerintahan_desa()
+    public function test_admin_can_open_kelola_informasi_pemerintahan_desa()
     {
         $this->refreshDatabase();
         $this->seed();
@@ -32,7 +29,7 @@ class KelolaInformasiPemerintahanDesaTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function test_admin_can_add_informasi_pemerintahan_desa()
+    public function test_admin_can_add_kelola_informasi_pemerintahan_desa()
     {
         $this->refreshDatabase();
         $this->seed();
@@ -40,19 +37,18 @@ class KelolaInformasiPemerintahanDesaTest extends TestCase
         $user = User::firstwhere('email','admin@gmail.com');
 
         PemerintahanDesa::create([
-            'gambar' => 'nota.jpg',
+            'gambar' => 'dana.jpg',
             'judul' => 'judul1',
-            'konten' => 'kontyen'
+            'konten' => 'konten'
         ]);
 
         $response = $this->actingAs($user)->get(route('pemerintahan-desa.store'));
         $response
-            ->assertSee('judul1')
-            ->assertSee('kontyen');
-
+            ->assertSee('judul')
+            ->assertSee('konten');
     }
 
-    public function test_admin_can_delete_informasi_pemerintahan_desa()
+    public function test_admin_can_delete_kelolainformasi_pemerintahan_desa()
     {
         $this->refreshDatabase();
         $this->seed();
@@ -60,14 +56,13 @@ class KelolaInformasiPemerintahanDesaTest extends TestCase
         $user = User::firstwhere('email','admin@gmail.com');
 
         $pemerintahan = PemerintahanDesa::create([
-            'gambar' => 'nota.jpg',
+            'gambar' => 'dana.jpg',
             'judul' => 'judul1',
-            'konten' => 'kontyen'
+            'konten' => 'konten'
         ]);
 
         $response = $this->actingAs($user)->delete(route('pemerintahan-desa.destroy',$pemerintahan->id));
         $response->assertStatus(302);
-
 
     }
 
@@ -79,30 +74,13 @@ class KelolaInformasiPemerintahanDesaTest extends TestCase
         $user = User::firstwhere('email','admin@gmail.com');
 
         $pemerintahan = PemerintahanDesa::create([
-            'gambar' => 'nota.jpg',
+            'gambar' => 'dana.jpg',
             'judul' => 'judul1',
-            'konten' => 'kontyen'
+            'konten' => 'konten'
         ]);
 
         $response = $this->actingAs($user)->put(route('pemerintahan-desa.destroy',$pemerintahan->id));
         $response->assertStatus(302);
 
-
     }
-
-
-
-    // public function test_admin_can_edit_informasi_pemerintahan_desa()
-    // {
-    //     $response = $this->get('/');
-
-    //     $response->assertStatus(200);
-    // }
-
-    // public function test_admin_can_delete_informasi_pemerintahan_desa()
-    // {
-    //     $response = $this->get('/');
-
-    //     $response->assertStatus(200);
-    // }
 }

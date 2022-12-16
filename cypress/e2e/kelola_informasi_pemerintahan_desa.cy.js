@@ -11,7 +11,7 @@ describe('Kelola Informasi Pemerinthan Desa', () => {
         cy.url().should('contain', 'http://localhost:8000/kelola-pemerintahan-desa')
     })
 
-    it('Admin can add informasi pemerintahan desa', () => {
+    it('Admin can add kelola informasi pemerintahan desa', () => {
         cy.visit('localhost:8000/masuk')
 
         cy.get('input[name=email]').type('admin@gmail.com')
@@ -30,7 +30,7 @@ describe('Kelola Informasi Pemerinthan Desa', () => {
         cy.get('#simpan').click()
     })
 
-    it('Admin can edit informasi pemerintahan desa', () => {
+    it('Admin can edit kelola informasi pemerintahan desa', () => {
         cy.visit('localhost:8000/masuk')
 
         cy.get('input[name=email]').type('admin@gmail.com')
@@ -50,7 +50,7 @@ describe('Kelola Informasi Pemerinthan Desa', () => {
         cy.get('#simpan').click()
     })
 
-    it('Admin can delete informasi pemerintahan desa', () => {
+    it('Admin can delete kelola informasi pemerintahan desa', () => {
         cy.visit('localhost:8000/masuk')
 
         cy.get('input[name=email]').type('admin@gmail.com')

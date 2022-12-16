@@ -17,7 +17,6 @@ class LayananSuratTest extends TestCase
     {
         $response = $this->get('http://localhost:8000/layanan-surat');
 
-
-        $response->assertStatus(500);
+        $response->assertStatus(200);
     }
 }
