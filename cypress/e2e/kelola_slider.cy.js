@@ -45,7 +45,7 @@ describe('Kelola Slider', () => {
     cy.get('div').contains('Gambar berhasil ditambahkan')
   })
 
-  it('Gambar is required whet Tambah Gambar', () => {
+  it('Gambar is required when Tambah Gambar', () => {
     cy.visit('http://localhost:8000/masuk')
 
     cy.get('input[name=email]').type('admin@gmail.com')

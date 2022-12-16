@@ -43,6 +43,21 @@ class KelolaGaleriTest extends TestCase
         $response->assertStatus(302);
     }
 
+    public function test_gambar_field_is_required_when_tambah_galeri()
+    {
+
+        $response = $this->withoutMiddleware()->post('gallery', [
+            'gambar' => '',
+            'caption' => 'Caption Test'
+        ]);
+
+        $response->assertInvalid([
+            'gambar' => 'The gambar field is required.',
+        ]);
+
+        $response->assertStatus(302);
+    }
+
     public function test_admin_can_hapus_galeri()
     {
         Storage::fake('avatars');
