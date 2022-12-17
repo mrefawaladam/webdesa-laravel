@@ -41,7 +41,10 @@ describe('Kelola Berita', () => {
     cy.get('a').contains('Tambah Berita').click()
     cy.get('input[name=gambar]').selectFile('cypress/fixtures/linkaja.png')
     cy.get('input[name=judul]').type('Pemerintah Sudah Bisa Melakukan Pembayaran Menggunakan Link Aja')
-    cy.get('textarea[name=konten]').type('Kini Pembayaran, Pinjaman, & Investasi Online dalam satu genggaman. Cukup scan QR / kode tiket untuk pembayaran offline di seluruh merchant.', {force:true})
+    cy.get('textarea[name=konten]').type(
+        'Kini Pembayaran, Pinjaman, & Investasi Online dalam satu genggaman. Cukup scan QR / kode tiket untuk pembayaran offline di seluruh merchant.',
+         {force:true}
+    )
     cy.get('button[id=simpan]').click()
 
     cy.get('div').contains('Berita berhasil ditambahkan ')
@@ -60,7 +63,10 @@ describe('Kelola Berita', () => {
 
     cy.get('a').contains('Tambah Berita').click()
     cy.get('input[name=gambar]').selectFile('cypress/fixtures/linkaja.png')
-    cy.get('textarea[name=konten]').type('Kini Pembayaran, Pinjaman, & Investasi Online dalam satu genggaman. Cukup scan QR / kode tiket untuk pembayaran offline di seluruh merchant.', {force:true})
+    cy.get('textarea[name=konten]').type(
+        'Kini Pembayaran, Pinjaman, & Investasi Online dalam satu genggaman. Cukup scan QR / kode tiket untuk pembayaran offline di seluruh merchant.',
+         {force:true}
+    )
     cy.get('button[id=simpan]').click()
 
     cy.get('span').contains('The judul field is required')
@@ -98,7 +104,10 @@ describe('Kelola Berita', () => {
 
     cy.get('a').contains('Tambah Berita').click()
     cy.get('input[name=judul]').type('Pemerintah Sudah Bisa Melakukan Pembayaran Menggunakan Link Aja')
-    cy.get('textarea[name=konten]').type('Kini Pembayaran, Pinjaman, & Investasi Online dalam satu genggaman. Cukup scan QR / kode tiket untuk pembayaran offline di seluruh merchant.', {force:true})
+    cy.get('textarea[name=konten]').type(
+        'Kini Pembayaran, Pinjaman, & Investasi Online dalam satu genggaman. Cukup scan QR / kode tiket untuk pembayaran offline di seluruh merchant.',
+         {force:true}
+    )
     cy.get('button[id=simpan]').click()
 
     cy.get('span').contains('The gambar field is required')
