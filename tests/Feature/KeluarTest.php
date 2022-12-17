@@ -13,7 +13,7 @@ class KeluarTest extends TestCase
      *
      * @return void
      */
-    public function test_user_can_logout()
+    public function test_admin_can_logout()
     {
         $credential = [
                 'email' => 'admin@gmail.com',

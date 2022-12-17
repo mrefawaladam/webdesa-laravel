@@ -1,5 +1,5 @@
 describe('Keluar', () => {
-  it('User can Logout', () => {
+  it('Admin can Logout', () => {
       cy.visit('localhost:8000/masuk')
       cy.get('.mb-3 > .input-group > .form-control').type('admin@gmail.com')
       cy.get(':nth-child(3) > .input-group > .form-control').type('password')
