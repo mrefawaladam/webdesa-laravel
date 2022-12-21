@@ -32,7 +32,5 @@ jobs:
       env:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
-    - name: db seed && migrate
-      run: |
-        php artisan migrate
-        php artisan db:seed
+    - name: Generate
+        run: php artisan migrate 
