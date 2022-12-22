@@ -1,0 +1,29 @@
+name: Laravel
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  laravel-tests:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: docker builv
+      run: docker-compose build app
+    - name: docker compose up
+      run: docker-compose up -d
+    - name: docker compose ls -i
+      run: docker-compose exec app ls -l
+    - name: docker compose rf comopser
+      run: docker-compose exec app rm -rf vendor composer.lock
+    - name: docker composer install
+      run: docker-compose exec app composer install
+    - name: docker composer migrate
+      run: docker-compose exec app php artisan migrate
+    - name: docker composer seeder
+      run: docker-compose exec app php artisan db:seed
+    
