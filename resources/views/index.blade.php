@@ -34,7 +34,7 @@
 @endsection
 
 @section('header')
-<h1 class="text-white text-sm text-muted">SELAMAT DATANG DI WEBSITE RESMI</h1>
+<h1 class="text-white text-sm text-muted">SELAMAT DATANG DI WEBSITE RESMI CICD</h1>
 <h2 class="text-lead text-white">DESA {{ Str::upper($desa->nama_desa) }} <br> KECAMATAN
     {{ Str::upper($desa->nama_kecamatan) }} <br />KABUPATEN {{ Str::upper($desa->nama_kabupaten) }}</h2>
 @endsection
