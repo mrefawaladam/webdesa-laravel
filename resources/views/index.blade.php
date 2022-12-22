@@ -70,7 +70,7 @@
             </div>
         </div>
     </div>
-    <div class="row mt-4 justify-content-center">
+    <div class="row mt-4 justify-content-center kk">
         @foreach ($surat as $item)
         <div class="col-lg-4 col-md-6 surats">
             <div class="single-service bg-white rounded shadow p-3 animate-up">
